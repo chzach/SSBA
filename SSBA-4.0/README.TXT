@@ -24,7 +24,7 @@ problem-257-65132-pre.txt in the Dataset folder.
 Build and test instructions on a Unixoid box with Suitesparse/colamd installed
 in a standard directory:
 
-> mkdie build && cd build && cmake .. && make
+> mkdir build && cd build && cmake .. && make
 > cd Apps
 > ./bundle_large ../../Dataset/problem-257-65132-pre.txt
 > ./bundle_large_triggs ../../Dataset/problem-257-65132-pre.txt
