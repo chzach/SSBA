@@ -9,8 +9,18 @@ include (Config/v3d_macros.cmake)
 
 include (Config/local_config.cmake)
 
-include_directories(${V3D_INCLUDE_DIRS} ${EXTRA_INC_DIRS})
+file(GLOB COLAMD_SRC 
+	COLAMD/Source/* 
+	COLAMD/Include/* 
+	SuiteSparse_config/SuiteSparse_config.h 
+	SuiteSparse_config/SuiteSparse_config.c
+	)
+include_directories("SuiteSparse_config/")
+add_library(colamd ${COLAMD_SRC})
+set ( V3D_INCLUDE_DIRS ${V3D_INCLUDE_DIRS} "COLAMD/Include" )
 
+
+include_directories(${V3D_INCLUDE_DIRS} ${EXTRA_INC_DIRS})
 
 source_group("Base" REGULAR_EXPRESSION Base/.*cpp|Base.*h)
 set (BASE_SRC
