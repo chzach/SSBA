@@ -1,0 +1,19 @@
+This is the general format for data input for bundle adjustment: 
+
+	First line: 
+		<numPoints> <numCams> <num2Dmeasurements>
+
+	Second line (intrinsic matrix):
+		<focalXdirect> <skew> <cx> <focalYdirect> <cy> <k1> <k2> <p1> <p2>
+
+	Following lines (numPoints):
+		<uniquePtId> <xCord> <yCord> <zCord>
+
+	Lines Following (numCams): 
+		<uniqueViewId> <12RTparameters(Row Major, left to right)>
+
+	Lines Following (num2Dmeasurements): 
+		<uniqueViewId> <uniquePtId> <camera2DxCord> <camera2DyCord> <1>
+
+There is an commented accompanying data set.
+
